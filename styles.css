@@ -4,6 +4,7 @@
     height: 80%;
     width: 40%;
     position: relative;
+
 }
 
 #flightStatus {
@@ -11,8 +12,8 @@
 }
 
 #flightDisplay {
-    text-align: center; 
-    height: 400px; 
+    text-align: center;
+    height: 400px;
     width: 100%;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .center-block {
-    text-align: center; 
+    text-align: center;
     display: inline-block;
 }
 
