@@ -1,7 +1,3 @@
-// Write your JavaScript code here.
-// Remember to pay attention to page loading!
-//left off trying to figure out how to move rocket img
-
 
 window.addEventListener("load", function () {
     console.log("window is loaded");
@@ -9,10 +5,13 @@ window.addEventListener("load", function () {
     let background = document.getElementById("shuttleBackground");
     let shuttleHeight = document.getElementById("spaceShuttleHeight");
     let rocketShip = document.getElementById("rocket");
-    rocketShip.style.position = "relative";
+    // rocketShip.style.position = "relative";
     rocketShip.style.left = '0px';
-    rocketShip.style.top = '0px';
-    // //rocketShip.style.bottom = 0 + 'px';
+    rocketShip.style.bottom = '0px';
+    rocketShip.style.position = "absolute";
+    rocketShip.style.textAlign = "center";
+
+
 
 
     let launch = document.getElementById("takeoff");
@@ -28,9 +27,11 @@ window.addEventListener("load", function () {
     let landed = document.getElementById("landing");
     landed.addEventListener("click", function () {
         window.alert("The shuttle is landing. Landing gear engaged.");
-        document.getElementById("flightStatus").innerHTML = "The shuttle has landed.";
-        document.getElementById("shuttleBackground").style.backgroundColor = "green";
-        document.getElementById("spaceShuttleHeight").innerHTML = 0;
+        currentStatus.innerHTML = "The shuttle has landed.";
+        background.style.backgroundColor = "green";
+        shuttleHeight.innerHTML = 0;
+        rocketShip.style.left = '0px';
+        rocketShip.style.bottom = '0px';
     });
 
     let aborted = document.getElementById("missionAbort");
@@ -40,18 +41,20 @@ window.addEventListener("load", function () {
             currentStatus.innerHTML = "Mission aborted.";
             background.style.backgroundColor = "green";
             shuttleHeight.innerHTML = 0;
+            rocketShip.style.left = '0px';
+            rocketShip.style.bottom = '0px';
         }
     });
 
     let upButton = document.getElementById("up");
     upButton.addEventListener("click", function () {
-        rocketShip.style.top = parseInt(rocketShip.style.top) - 10 + 'px';
+        rocketShip.style.bottom = parseInt(rocketShip.style.bottom) + 10 + 'px';
         shuttleHeight.innerHTML = parseInt(shuttleHeight.innerHTML) + 10000;
     });
 
     let downButton = document.getElementById("down");
     downButton.addEventListener("click", function () {
-        rocketShip.style.top = parseInt(rocketShip.style.top) + 10 + 'px';
+        rocketShip.style.bottom = parseInt(rocketShip.style.bottom) - 10 + 'px';
         shuttleHeight.innerHTML = parseInt(shuttleHeight.innerHTML) - 10000;
     });
 
